@@ -7,7 +7,7 @@ A collection of my Webfishing mods for the GDWeave Mod Loader
 3. Move the downloaded mod folder into the "GDWeave/mods" folder
 
 ## Compiling
-nothing yet
+Read the README.MD inside any of the folders in the "Source" folder
 
 ## List of Mods
 - Automasher - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
