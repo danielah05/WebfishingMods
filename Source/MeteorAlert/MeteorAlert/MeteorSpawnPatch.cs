@@ -28,7 +28,7 @@ public class MeteorSpawnPatch : IScriptMod {
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new ConstantToken(new StringVariant("a meteor has landed!"));
                 yield return new Token(TokenType.ParenthesisClose);
-                new Token(TokenType.Newline, 1);
+                yield return token;
             } else {
                 // return to original token
                 yield return token;
