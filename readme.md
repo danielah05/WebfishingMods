@@ -1,0 +1,21 @@
+# My Webfishing Mods
+A collection of my Webfishing mods for the Catcher Mod Loader
+
+## How to install
+1. Download and install the latest version of the Catcher Mod Loader (https://github.com/Sulayre/WebfishingCatcher)
+2. Download the mod you want from the Releases page or download the Repository
+3. Move the downloaded mod folder into the "Catcher/mods" folder
+
+## Compiling
+1. Follow the Catcher Mod Loader "MODDING BASICS" Guide to setup a modding enviroment
+2. Copy the content folder from the "Source" folder of any of the mods into the decompiled project
+3. Export a PCK named "mod.pck" with "Export selected resources (and their dependencies)" selected and the modified files checked
+
+## List of Mods
+- Automasher - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
+- MeteorAlert - Basic mod that gives you a in game notification whenever a meteor spawns, useful for people with a lot of background noise or who are hearing impaired
+
+## Big thanks to my ko-fi supporters!
+spaceashes<br>
+Dionicio3<br>
+<a href='https://ko-fi.com/G2G1ZERWL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
