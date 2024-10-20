@@ -1,15 +1,13 @@
 # My Webfishing Mods
-A collection of my Webfishing mods for the Catcher Mod Loader
+A collection of my Webfishing mods for the GDWeave Mod Loader
 
 ## How to install
-1. Download and install the latest version of the Catcher Mod Loader (https://github.com/Sulayre/WebfishingCatcher)
+1. Download and install the latest version of the GDWeave Mod Loader (https://github.com/NotNite/GDWeave)
 2. Download the mod you want from the Releases page or download the Repository
-3. Move the downloaded mod folder into the "Catcher/mods" folder
+3. Move the downloaded mod folder into the "GDWeave/mods" folder
 
 ## Compiling
-1. Follow the Catcher Mod Loader "MODDING BASICS" Guide to setup a modding enviroment
-2. Copy the content folder from the "Source" folder of any of the mods into the decompiled project
-3. Export a PCK named "mod.pck" with "Export selected resources (and their dependencies)" selected and the modified files checked
+nothing yet
 
 ## List of Mods
 - Automasher - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
