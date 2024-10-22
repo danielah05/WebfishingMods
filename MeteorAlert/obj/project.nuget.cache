@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rorf1zi1C4LmtJrs9WRaBnZEFBpOwVcRWM5qVK/FixZT8tYpy86T0IkOtM7SYTQtQlCFLkLCvh82ZhUOeXj73A==",
+  "success": true,
+  "projectFilePath": "/mnt/Silly_Drive/github/WebfishingMods/MeteorAlert/MeteorAlert.csproj",
+  "expectedPackageFiles": [
+    "/home/daniela/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
