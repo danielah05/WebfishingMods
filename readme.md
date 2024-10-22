@@ -2,7 +2,7 @@
 A collection of my Webfishing mods for the GDWeave Mod Loader
 
 ## How to install
-1. Download and install the latest version of the GDWeave Mod Loader (https://github.com/NotNite/GDWeave)
+1. Download and install the latest version of the GDWeave Mod Loader ([https://github.com/NotNite/GDWeave](https://github.com/NotNite/GDWeave#installation))
 2. Download the mod you want from the Releases page or download the Repository
 3. Move the downloaded mod folder into the "GDWeave/mods" folder
 
