@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeteorAlert", "MeteorAlert\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintToggle", "SprintToggle\SprintToggle.csproj", "{00D78789-DD9F-428F-AD15-3E8AC3A5EF42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BionicFisher", "BionicFisher\BionicFisher.csproj", "{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{00D78789-DD9F-428F-AD15-3E8AC3A5EF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00D78789-DD9F-428F-AD15-3E8AC3A5EF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00D78789-DD9F-428F-AD15-3E8AC3A5EF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
