@@ -58,12 +58,12 @@ public class MeteorSpawnPatch : IScriptMod {
                 yield return new IdentifierToken(NotifSound);
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.Newline, 1);
-                // notif.volume_db = 1
+                // notif.volume_db = -4
                 yield return new IdentifierToken(Notif);
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("volume_db");
                 yield return new Token(TokenType.OpAssign);
-                yield return new ConstantToken(new IntVariant(1));
+                yield return new ConstantToken(new IntVariant(-4));
                 yield return new Token(TokenType.Newline, 1);
                 // notif.pitch_scale = 1
                 yield return new IdentifierToken(Notif);
@@ -71,6 +71,13 @@ public class MeteorSpawnPatch : IScriptMod {
                 yield return new IdentifierToken("pitch_scale");
                 yield return new Token(TokenType.OpAssign);
                 yield return new ConstantToken(new IntVariant(1));
+                yield return new Token(TokenType.Newline, 1);
+                // notif.bus = "SFX"
+                yield return new IdentifierToken(Notif);
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("bus");
+                yield return new Token(TokenType.OpAssign);
+                yield return new ConstantToken(new StringVariant("SFX"));
                 yield return new Token(TokenType.Newline, 1);
                 // notif.play()
                 yield return new IdentifierToken(Notif);
