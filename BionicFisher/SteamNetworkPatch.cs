@@ -10,6 +10,7 @@ public class SteamNetworkPatch : IScriptMod {
     private const string SplitText = "split_text";
     private const string CombineText = "combine_text";
     private const string BBDetect = "bbdetect";
+    private const string BBDetect2 = "bbdetect2";
     private const string DrunkDetect = "drunkdetect";
     private const string Offset = "offset";
     private const string LetterCount = "lettercount";
@@ -73,6 +74,12 @@ public class SteamNetworkPatch : IScriptMod {
                 yield return new Token(TokenType.OpAssign);
                 yield return new ConstantToken(new BoolVariant(false));
                 yield return new Token(TokenType.Newline, 2);
+                // var bbdetect2 = false
+                yield return new Token(TokenType.PrVar);
+                yield return new IdentifierToken(BBDetect2);
+                yield return new Token(TokenType.OpAssign);
+                yield return new ConstantToken(new BoolVariant(false));
+                yield return new Token(TokenType.Newline, 2);
                 // var drunkdetect = false
                 yield return new Token(TokenType.PrVar);
                 yield return new IdentifierToken(DrunkDetect);
@@ -107,9 +114,25 @@ public class SteamNetworkPatch : IScriptMod {
                 yield return new Token(TokenType.BracketClose);
                 yield return new Token(TokenType.Colon);
                 yield return new Token(TokenType.Newline, 3);
+                // if l == "[" and bbdetect == true:
+                yield return new Token(TokenType.CfIf);
+                yield return new IdentifierToken(ForL);
+                yield return new Token(TokenType.OpEqual);
+                yield return new ConstantToken(new StringVariant("["));
+                yield return new Token(TokenType.OpAnd);
+                yield return new IdentifierToken(BBDetect);
+                yield return new Token(TokenType.OpEqual);
+                yield return new ConstantToken(new BoolVariant(true));
+                yield return new Token(TokenType.Colon);
+                yield return new Token(TokenType.Newline, 4);
+                // bbdetect2 = true
+                yield return new IdentifierToken(BBDetect2);
+                yield return new Token(TokenType.OpAssign);
+                yield return new ConstantToken(new BoolVariant(true));
+                yield return new Token(TokenType.Newline, 3);
                 // if l == "[":
                 yield return new Token(TokenType.CfIf);
-                yield return new IdentifierToken("l");
+                yield return new IdentifierToken(ForL);
                 yield return new Token(TokenType.OpEqual);
                 yield return new ConstantToken(new StringVariant("["));
                 yield return new Token(TokenType.Colon);
@@ -126,7 +149,7 @@ public class SteamNetworkPatch : IScriptMod {
                 yield return new Token(TokenType.Newline, 3);
                 // if l == "/" and bbdetect == true:
                 yield return new Token(TokenType.CfIf);
-                yield return new IdentifierToken("l");
+                yield return new IdentifierToken(ForL);
                 yield return new Token(TokenType.OpEqual);
                 yield return new ConstantToken(new StringVariant("/"));
                 yield return new Token(TokenType.OpAnd);
@@ -140,6 +163,40 @@ public class SteamNetworkPatch : IScriptMod {
                 yield return new Token(TokenType.OpAssign);
                 yield return new ConstantToken(new BoolVariant(true));
                 yield return new Token(TokenType.Newline, 3);
+                // if bbdetect2 == true:
+                yield return new Token(TokenType.CfIf);
+                yield return new IdentifierToken(BBDetect2);
+                yield return new Token(TokenType.OpEqual);
+                yield return new ConstantToken(new BoolVariant(true));
+                yield return new Token(TokenType.Colon);
+                yield return new Token(TokenType.Newline, 4);
+                // bionicend = floor((split_text[n].length() - offset - offset) / 2.5)
+                yield return new IdentifierToken(BionicEnd);
+                yield return new Token(TokenType.OpAssign);
+                yield return new IdentifierToken("floor");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new IdentifierToken(SplitText);
+                yield return new Token(TokenType.BracketOpen);
+                yield return new IdentifierToken(ForN);
+                yield return new Token(TokenType.BracketClose);
+                yield return new Token(TokenType.Period);
+                yield return new IdentifierToken("length");
+                yield return new Token(TokenType.ParenthesisOpen);
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.OpSub);
+                yield return new IdentifierToken(Offset);
+                yield return new Token(TokenType.OpSub);
+                yield return new IdentifierToken(Offset);
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.OpDiv);
+                yield return new ConstantToken(new RealVariant(2.5));
+                yield return new Token(TokenType.ParenthesisClose);
+                yield return new Token(TokenType.Newline, 3);
+                // else:
+                yield return new Token(TokenType.CfElse);
+                yield return new Token(TokenType.Colon);
+                yield return new Token(TokenType.Newline, 4);
                 // bionicend = floor((split_text[n].length() - offset) / 2.5)
                 yield return new IdentifierToken(BionicEnd);
                 yield return new Token(TokenType.OpAssign);
