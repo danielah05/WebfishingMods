@@ -11,7 +11,7 @@ Read the README.MD inside any of the folders in the "Source" folder
 
 ## List of Mods
 - Automasher - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
-- MeteorAlert - Basic mod that gives you a in game notification whenever a meteor spawns, useful for people with a lot of background noise or who are hearing impaired
+- EventAlert - Basic mod that gives you a in game notification whenever certain events happen (Example: Meteor spawns, Raincloud spawns)
 - SprintToggle - Mod that allows you to toggle sprinting by just pressing the shift key
 - BionicFisher - A Bionic Reader for the Webfishing Chat
 
