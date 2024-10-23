@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # 
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automasher", "Automasher\Automasher.csproj", "{1A273855-C2D0-40BB-B22C-CE17AA4D0A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeteorAlert", "MeteorAlert\MeteorAlert.csproj", "{E93081E7-B349-4107-85B4-F776AF56BB69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAlert", "EventAlert\EventAlert.csproj", "{E93081E7-B349-4107-85B4-F776AF56BB69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintToggle", "SprintToggle\SprintToggle.csproj", "{00D78789-DD9F-428F-AD15-3E8AC3A5EF42}"
 EndProject

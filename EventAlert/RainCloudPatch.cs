@@ -2,13 +2,13 @@ using GDWeave.Godot;
 using GDWeave.Godot.Variants;
 using GDWeave.Modding;
 
-namespace MeteorAlert;
+namespace EventAlert;
 
-public class MeteorSpawnPatch : IScriptMod {
+public class RainCloudPatch : IScriptMod {
     private const string Notif = "notif";
     private const string NotifSound = "notifsound";
 
-    public bool ShouldRun(string path) => path == "res://Scenes/Entities/MeteorSpawn/meteor_spawn.gdc";
+    public bool ShouldRun(string path) => path == "res://Scenes/Entities/RainCloud/raincloud.gdc";
 
     public IEnumerable<Token> Modify(string path, IEnumerable<Token> tokens) {
         var readyMatch = new MultiTokenWaiter([
@@ -81,12 +81,12 @@ public class MeteorSpawnPatch : IScriptMod {
                 yield return new Token(TokenType.Newline, 1);
 
                 // add custom notification code
-                // PlayerData._send_notification("a meteor has landed!", 1)
+                // PlayerData._send_notification("a raincloud has formed!", 1)
                 yield return new IdentifierToken("PlayerData");
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("_send_notification");
                 yield return new Token(TokenType.ParenthesisOpen);
-                yield return new ConstantToken(new StringVariant("a meteor has landed!"));
+                yield return new ConstantToken(new StringVariant("a raincloud has formed!"));
                 yield return new Token(TokenType.Comma);
                 yield return new ConstantToken(new IntVariant(1));
                 yield return new Token(TokenType.ParenthesisClose);
