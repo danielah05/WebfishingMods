@@ -1,0 +1,9 @@
+{
+    "name": "SprintToggle",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/danielah05/WebfishingMods",
+    "description": "Simple sprint toggle mod for Webfishing",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.13"
+    ]
+}

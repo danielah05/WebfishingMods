@@ -1,0 +1,9 @@
+{
+    "name": "EventAlert",
+    "version_number": "1.0.4",
+    "website_url": "https://github.com/danielah05/WebfishingMods",
+    "description": "In game notification mod for whenever certain events happen (Example: Meteor spawns, Raincloud spawns)",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.13"
+    ]
+}

@@ -1,4 +1,10 @@
 {
   "Id": "EventAlert",
-  "AssemblyPath": "EventAlert.dll"
+  "AssemblyPath": "EventAlert.dll",
+  "Metadata": {
+    "Name": "Event Alert",
+    "Author": "danielah05",
+    "Version": "1.0.4",
+    "Description": "In game notification mod for whenever certain events happen (Example: Meteor spawns, Raincloud spawns)"
+  }
 }

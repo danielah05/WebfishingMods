@@ -1,5 +1,11 @@
 {
   "Id": "BionicFisher",
   "AssemblyPath": "BionicFisher.dll",
-  "PackPath": "mod.pck"
+  "PackPath": "mod.pck",
+  "Metadata": {
+    "Name": "Bionic Fisher",
+    "Author": "danielah05",
+    "Version": "1.0.2",
+    "Description": "A Bionic Reader for the Webfishing chat"
+  }
 }

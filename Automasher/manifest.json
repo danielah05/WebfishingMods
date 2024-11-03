@@ -1,4 +1,10 @@
 {
   "Id": "Automasher",
-  "AssemblyPath": "Automasher.dll"
+  "AssemblyPath": "Automasher.dll",
+  "Metadata": {
+    "Name": "Automasher",
+    "Author": "danielah05",
+    "Version": "1.0.2",
+    "Description": "A simple accessibility mod for people that struggle with mashing due to hand issues"
+  }
 }

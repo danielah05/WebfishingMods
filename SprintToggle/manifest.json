@@ -1,4 +1,10 @@
 {
   "Id": "SprintToggle",
-  "AssemblyPath": "SprintToggle.dll"
+  "AssemblyPath": "SprintToggle.dll",
+  "Metadata": {
+    "Name": "Sprint Toggle",
+    "Author": "danielah05",
+    "Version": "1.0.0",
+    "Description": "Simple sprint toggle mod for Webfishing"
+  }
 }

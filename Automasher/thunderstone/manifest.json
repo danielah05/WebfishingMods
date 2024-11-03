@@ -1,0 +1,9 @@
+{
+    "name": "Automasher",
+    "version_number": "1.0.2",
+    "website_url": "https://github.com/danielah05/WebfishingMods",
+    "description": "A simple accessibility mod for people that struggle with mashing due to hand issues",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.13"
+    ]
+}

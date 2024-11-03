@@ -1,0 +1,9 @@
+{
+    "name": "BionicFisher",
+    "version_number": "1.0.2",
+    "website_url": "https://github.com/danielah05/WebfishingMods",
+    "description": "A Bionic Reader for the Webfishing chat",
+    "dependencies": [
+        "NotNet-GDWeave-2.0.13"
+    ]
+}
