@@ -1,0 +1,18 @@
+[gd_resource type="ArrayMesh" load_steps=2 format=2]
+
+[ext_resource path="res://mods/SM64WhompsFortressMap/Models/P1_VMtl014.material" type="Material" id=1]
+
+[resource]
+resource_name = "WF_WF012"
+surfaces/0 = {
+"aabb": AABB( -4.08762, 18.432, -49.1353, 4.08796, 2.04, 4.08795 ),
+"array_data": PoolByteArray( 220, 3, 173, 57, 173, 116, 147, 65, 127, 138, 68, 194, 214, 172, 126, 255, 219, 63, 6, 68, 175, 197, 167, 57, 173, 116, 147, 65, 114, 48, 52, 194, 214, 172, 126, 255, 0, 0, 6, 68, 203, 205, 130, 192, 153, 198, 163, 65, 117, 48, 52, 194, 214, 172, 126, 255, 0, 0, 13, 66, 181, 205, 130, 192, 153, 198, 163, 65, 130, 138, 68, 194, 214, 172, 126, 255, 235, 67, 13, 66 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 6,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
