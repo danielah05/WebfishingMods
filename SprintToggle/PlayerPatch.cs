@@ -23,8 +23,6 @@ public class PlayerPatch : IScriptMod {
             t => t.Type is TokenType.ParenthesisOpen,
             t => t is ConstantToken {Value: StringVariant {Value: "mouse_look"}},
             t => t.Type is TokenType.ParenthesisClose,
-            t => t.Type is TokenType.Newline,
-            t => t.Type is TokenType.Newline
         ]);
         var newlineConsumer = new TokenConsumer(t => t.Type is TokenType.Newline);
         var sprintMatch = new MultiTokenWaiter([
@@ -54,6 +52,8 @@ public class PlayerPatch : IScriptMod {
             } else if (mouselookMatch.Check(token)) {
                 yield return token;
 
+                yield return new Token(TokenType.Newline, 1);
+
                 // if Input.is_action_just_pressed("move_sprint"):
                 yield return new Token(TokenType.CfIf);
                 yield return new IdentifierToken("Input");
@@ -70,22 +70,15 @@ public class PlayerPatch : IScriptMod {
                 yield return new Token(TokenType.OpAssign);
                 yield return new Token(TokenType.OpNot);
                 yield return new IdentifierToken(SprintToggle);
-                yield return new Token(TokenType.Newline, 1); // thos might crash
+                yield return new Token(TokenType.Newline, 1);
+            } else if (sprintMatch.Check(token)) {
+                yield return token;
 
-                // sprinting = not Input.is_action_pressed("move_sneak") and SprintToggle
-                yield return new IdentifierToken("sprinting");
-                yield return new Token(TokenType.OpAssign);
-                yield return new Token(TokenType.OpNot);
-                yield return new IdentifierToken("Input");
-                yield return new Token(TokenType.Period);
-                yield return new IdentifierToken("is_action_pressed");
-                yield return new Token(TokenType.ParenthesisOpen);
-                yield return new ConstantToken(new StringVariant("move_sneak"));
-                yield return new Token(TokenType.ParenthesisClose);
+                // this turns "sprinting = not Input.is_action_pressed("move_sneak") and Input.is_action_pressed("move_sprint")" into "sprinting = not Input.is_action_pressed("move_sneak") and sprint_toggle"
                 yield return new Token(TokenType.OpAnd);
                 yield return new IdentifierToken(SprintToggle);
 
-                newlineConsumer.SetReady(); // just nuke the original sprinting code, who fucking cares man
+                newlineConsumer.SetReady();
             } else {
                 yield return token;
             }
