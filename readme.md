@@ -10,9 +10,9 @@ A collection of my Webfishing mods for the GDWeave Mod Loader
 Read the README.MD inside any of the folders in the "Source" folder
 
 ## List of Mods
-- Automasher - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
+- Automasher (DEPRECATED! NOW IS BUILT INTO WEBFISHING) - A simple accessibility mod for people with hand issues that automatically mashes in the fishing minigames
 - EventAlert - Basic mod that gives you a in game notification whenever certain events happen (Example: Meteor spawns, Raincloud spawns)
-- SprintToggle - Mod that allows you to toggle sprinting by just pressing the shift key
+- SprintToggle (DEPRECATED! NOW IS BUILT INTO WEBFISHING) - Mod that allows you to toggle sprinting by just pressing the shift key
 - BionicFisher - A Bionic Reader for the Webfishing Chat
 
 ## Big thanks to my ko-fi supporters!

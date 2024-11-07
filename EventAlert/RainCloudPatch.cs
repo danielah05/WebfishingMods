@@ -35,13 +35,13 @@ public class RainCloudPatch : IScriptMod {
                 yield return new Token(TokenType.ParenthesisOpen);
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.Newline, 1);
-                // var notifsound = load("res://Sounds/store_bell.ogg")
+                // var notifsound = load("res://mods/EventAlert/Assets/drip3.ogg")
                 yield return new Token(TokenType.PrVar);
                 yield return new IdentifierToken(NotifSound);
                 yield return new Token(TokenType.OpAssign);
                 yield return new Token(TokenType.BuiltInFunc, 76);
                 yield return new Token(TokenType.ParenthesisOpen);
-                yield return new ConstantToken(new StringVariant("res://Sounds/store_bell.ogg"));
+                yield return new ConstantToken(new StringVariant("res://mods/EventAlert/Assets/drip3.ogg"));
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.Newline, 1);
                 // add_child(notif)
@@ -58,12 +58,12 @@ public class RainCloudPatch : IScriptMod {
                 yield return new IdentifierToken(NotifSound);
                 yield return new Token(TokenType.ParenthesisClose);
                 yield return new Token(TokenType.Newline, 1);
-                // notif.volume_db = -4
+                // notif.volume_db = -16
                 yield return new IdentifierToken(Notif);
                 yield return new Token(TokenType.Period);
                 yield return new IdentifierToken("volume_db");
                 yield return new Token(TokenType.OpAssign);
-                yield return new ConstantToken(new IntVariant(-4));
+                yield return new ConstantToken(new IntVariant(-16));
                 yield return new Token(TokenType.Newline, 1);
                 // notif.pitch_scale = 1
                 yield return new IdentifierToken(Notif);

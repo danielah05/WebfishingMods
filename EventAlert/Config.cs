@@ -3,6 +3,7 @@
 namespace EventAlert;
 
 public class Config {
+    [JsonInclude] public bool HideChatPrompts = true;
     [JsonInclude] public bool MeteorAlert = true;
     [JsonInclude] public bool RainAlert = true;
 }
