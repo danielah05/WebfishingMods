@@ -1,0 +1,10 @@
+{
+  "Id": "AutoclickerTweaks",
+  "AssemblyPath": "AutoclickerTweaks.dll",
+  "Metadata": {
+    "Name": "AutoclickerTweaks",
+    "Author": "danielah05",
+    "Version": "1.0.0",
+    "Description": "A mod that lets you adjust the speed of the Autoclicker setting (Settings change requires restart)"
+  }
+}

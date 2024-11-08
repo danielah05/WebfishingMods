@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SprintToggle", "SprintToggl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BionicFisher", "BionicFisher\BionicFisher.csproj", "{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoclickerTweaks", "AutoclickerTweaks\AutoclickerTweaks.csproj", "{359B2B5E-69F0-4A5B-B3C2-6889C95BC387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A044F7F-15BF-4B14-8A5C-CA471AD3BD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359B2B5E-69F0-4A5B-B3C2-6889C95BC387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359B2B5E-69F0-4A5B-B3C2-6889C95BC387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359B2B5E-69F0-4A5B-B3C2-6889C95BC387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359B2B5E-69F0-4A5B-B3C2-6889C95BC387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
