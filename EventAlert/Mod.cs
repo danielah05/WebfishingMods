@@ -9,6 +9,7 @@ public class Mod : IMod {
 
         if (Config.MeteorAlert) modInterface.RegisterScriptMod(new MeteorSpawnPatch());
         if (Config.RainAlert) modInterface.RegisterScriptMod(new RainCloudPatch());
+        if (Config.VoidPortalAlert) modInterface.RegisterScriptMod(new VoidPortalPatch());
     }
 
     public void Dispose() { }

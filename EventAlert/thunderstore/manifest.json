@@ -1,6 +1,6 @@
 {
     "name": "EventAlert",
-    "version_number": "1.0.5",
+    "version_number": "1.0.6",
     "website_url": "https://github.com/danielah05/WebfishingMods",
     "description": "In game notification mod for whenever certain events happen (Example: Meteor spawns, Raincloud spawns)",
     "dependencies": [
