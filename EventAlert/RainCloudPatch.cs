@@ -5,6 +5,7 @@ using GDWeave.Modding;
 namespace EventAlert;
 
 public class RainCloudPatch : IScriptMod {
+    private const string Time = "time";
     private const string Notif = "notif";
     private const string NotifSound = "notifsound";
 
@@ -23,6 +24,58 @@ public class RainCloudPatch : IScriptMod {
             if (readyMatch.Check(token)) {
                 // found match
                 yield return token;
+
+                // add chat log
+                if (Mod.Config.ShowLogs) {
+                    // var time = Time.get_time_string_from_system()
+                    yield return new Token(TokenType.PrVar);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAssign);
+                    yield return new IdentifierToken("Time");
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("get_time_string_from_system");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // time.erase(time.length() - 3, 3)
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("erase");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("length");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.OpSub);
+                    yield return new ConstantToken(new IntVariant(3));
+                    yield return new Token(TokenType.Comma);
+                    yield return new ConstantToken(new IntVariant(3));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // time = time.lstrip(0)
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAssign);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("lstrip");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new ConstantToken(new IntVariant(0));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // Network._update_chat("[color=#1e814e](" + time + " EventAlert)[/color]: a raincloud has formed!")
+                    yield return new IdentifierToken("Network");
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("_update_chat");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new ConstantToken(new StringVariant("[color=#1e814e]("));
+                    yield return new Token(TokenType.OpAdd);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAdd);
+                    yield return new ConstantToken(new StringVariant(" EventAlert)[/color]: a raincloud has formed!"));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                }
 
                 // play sound effect
                 // var notif = AudioStreamPlayer.new()

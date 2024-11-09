@@ -5,6 +5,7 @@ using GDWeave.Modding;
 namespace EventAlert;
 
 public class MeteorSpawnPatch : IScriptMod {
+    private const string Time = "time";
     private const string Notif = "notif";
     private const string NotifSound = "notifsound";
 
@@ -26,6 +27,58 @@ public class MeteorSpawnPatch : IScriptMod {
             } else if (readyMatch.Check(token)) {
                 // found match
                 yield return token;
+
+                // add chat log
+                if (Mod.Config.ShowLogs) {
+                    // var time = Time.get_time_string_from_system()
+                    yield return new Token(TokenType.PrVar);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAssign);
+                    yield return new IdentifierToken("Time");
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("get_time_string_from_system");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // time.erase(time.length() - 3, 3)
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("erase");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("length");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.OpSub);
+                    yield return new ConstantToken(new IntVariant(3));
+                    yield return new Token(TokenType.Comma);
+                    yield return new ConstantToken(new IntVariant(3));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // time = time.lstrip(0)
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAssign);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("lstrip");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new ConstantToken(new IntVariant(0));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                    // Network._update_chat("[color=#1e814e](" + time + " EventAlert)[/color]: a meteor has landed!")
+                    yield return new IdentifierToken("Network");
+                    yield return new Token(TokenType.Period);
+                    yield return new IdentifierToken("_update_chat");
+                    yield return new Token(TokenType.ParenthesisOpen);
+                    yield return new ConstantToken(new StringVariant("[color=#1e814e]("));
+                    yield return new Token(TokenType.OpAdd);
+                    yield return new IdentifierToken(Time);
+                    yield return new Token(TokenType.OpAdd);
+                    yield return new ConstantToken(new StringVariant(" EventAlert)[/color]: a meteor has landed!"));
+                    yield return new Token(TokenType.ParenthesisClose);
+                    yield return new Token(TokenType.Newline, 1);
+                }
 
                 // play sound effect
                 // var notif = AudioStreamPlayer.new()
@@ -102,7 +155,7 @@ public class MeteorSpawnPatch : IScriptMod {
                 yield return new Token(TokenType.ParenthesisClose);
 
                 // remove the "what was that" text from the chat, its not needed
-                if (Mod.Config.HideChatPrompts) newlineConsumer.SetReady();
+                if (Mod.Config.HideVanillaChatPrompts) newlineConsumer.SetReady();
                 else yield return token;
             } else {
                 // return to original token
