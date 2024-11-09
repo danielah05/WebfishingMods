@@ -37,22 +37,25 @@ public class RainCloudPatch : IScriptMod {
                     yield return new Token(TokenType.ParenthesisOpen);
                     yield return new Token(TokenType.ParenthesisClose);
                     yield return new Token(TokenType.Newline, 1);
-                    // time.erase(time.length() - 3, 3)
-                    yield return new IdentifierToken(Time);
-                    yield return new Token(TokenType.Period);
-                    yield return new IdentifierToken("erase");
-                    yield return new Token(TokenType.ParenthesisOpen);
-                    yield return new IdentifierToken(Time);
-                    yield return new Token(TokenType.Period);
-                    yield return new IdentifierToken("length");
-                    yield return new Token(TokenType.ParenthesisOpen);
-                    yield return new Token(TokenType.ParenthesisClose);
-                    yield return new Token(TokenType.OpSub);
-                    yield return new ConstantToken(new IntVariant(3));
-                    yield return new Token(TokenType.Comma);
-                    yield return new ConstantToken(new IntVariant(3));
-                    yield return new Token(TokenType.ParenthesisClose);
-                    yield return new Token(TokenType.Newline, 1);
+                    // hide seconds
+                    if (!Mod.Config.ShowSeconds) {
+                        // time.erase(time.length() - 3, 3)
+                        yield return new IdentifierToken(Time);
+                        yield return new Token(TokenType.Period);
+                        yield return new IdentifierToken("erase");
+                        yield return new Token(TokenType.ParenthesisOpen);
+                        yield return new IdentifierToken(Time);
+                        yield return new Token(TokenType.Period);
+                        yield return new IdentifierToken("length");
+                        yield return new Token(TokenType.ParenthesisOpen);
+                        yield return new Token(TokenType.ParenthesisClose);
+                        yield return new Token(TokenType.OpSub);
+                        yield return new ConstantToken(new IntVariant(3));
+                        yield return new Token(TokenType.Comma);
+                        yield return new ConstantToken(new IntVariant(3));
+                        yield return new Token(TokenType.ParenthesisClose);
+                        yield return new Token(TokenType.Newline, 1);
+                    }
                     // time = time.lstrip(0)
                     yield return new IdentifierToken(Time);
                     yield return new Token(TokenType.OpAssign);
@@ -63,7 +66,7 @@ public class RainCloudPatch : IScriptMod {
                     yield return new ConstantToken(new IntVariant(0));
                     yield return new Token(TokenType.ParenthesisClose);
                     yield return new Token(TokenType.Newline, 1);
-                    // Network._update_chat("[color=#1e814e](" + time + " EventAlert)[/color]: a raincloud has formed!")
+                    // Network._update_chat("[color=#1e814e](" + time + " Rain)[/color] a raincloud has formed!")
                     yield return new IdentifierToken("Network");
                     yield return new Token(TokenType.Period);
                     yield return new IdentifierToken("_update_chat");
@@ -72,7 +75,7 @@ public class RainCloudPatch : IScriptMod {
                     yield return new Token(TokenType.OpAdd);
                     yield return new IdentifierToken(Time);
                     yield return new Token(TokenType.OpAdd);
-                    yield return new ConstantToken(new StringVariant(" EventAlert)[/color]: a raincloud has formed!"));
+                    yield return new ConstantToken(new StringVariant(" Rain)[/color] a raincloud has formed!"));
                     yield return new Token(TokenType.ParenthesisClose);
                     yield return new Token(TokenType.Newline, 1);
                 }
