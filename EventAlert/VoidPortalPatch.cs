@@ -56,14 +56,14 @@ public class VoidPortalPatch : IScriptMod {
                         yield return new Token(TokenType.ParenthesisClose);
                         yield return new Token(TokenType.Newline, 1);
                     }
-                    // time = time.lstrip(0)
+                    // time = time.trim_prefix("0")
                     yield return new IdentifierToken(Time);
                     yield return new Token(TokenType.OpAssign);
                     yield return new IdentifierToken(Time);
                     yield return new Token(TokenType.Period);
-                    yield return new IdentifierToken("lstrip");
+                    yield return new IdentifierToken("trim_prefix");
                     yield return new Token(TokenType.ParenthesisOpen);
-                    yield return new ConstantToken(new IntVariant(0));
+                    yield return new ConstantToken(new StringVariant("0"));
                     yield return new Token(TokenType.ParenthesisClose);
                     yield return new Token(TokenType.Newline, 1);
                     // Network._update_chat("[color=#1e814e](" + time + " Void)[/color] a void portal has opened!")
