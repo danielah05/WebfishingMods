@@ -56,16 +56,7 @@ public class RainCloudPatch : IScriptMod {
                         yield return new Token(TokenType.ParenthesisClose);
                         yield return new Token(TokenType.Newline, 1);
                     }
-                    // time = time.lstrip(0)
-                    yield return new IdentifierToken(Time);
-                    yield return new Token(TokenType.OpAssign);
-                    yield return new IdentifierToken(Time);
-                    yield return new Token(TokenType.Period);
-                    yield return new IdentifierToken("lstrip");
-                    yield return new Token(TokenType.ParenthesisOpen);
-                    yield return new ConstantToken(new IntVariant(0));
-                    yield return new Token(TokenType.ParenthesisClose);
-                    yield return new Token(TokenType.Newline, 1);
+
                     // Network._update_chat("[color=#1e814e](" + time + " Rain)[/color] a raincloud has formed!")
                     yield return new IdentifierToken("Network");
                     yield return new Token(TokenType.Period);
