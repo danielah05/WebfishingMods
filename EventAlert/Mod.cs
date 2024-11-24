@@ -7,9 +7,9 @@ public class Mod : IMod {
     public Mod(IModInterface modInterface) {
         Config = modInterface.ReadConfig<Config>();
 
-        if (Config.MeteorAlert) modInterface.RegisterScriptMod(new MeteorSpawnPatch());
-        if (Config.RainAlert) modInterface.RegisterScriptMod(new RainCloudPatch());
-        if (Config.VoidPortalAlert) modInterface.RegisterScriptMod(new VoidPortalPatch());
+        modInterface.RegisterScriptMod(new MeteorSpawnPatch());
+        modInterface.RegisterScriptMod(new RainCloudPatch());
+        modInterface.RegisterScriptMod(new VoidPortalPatch());
     }
 
     public void Dispose() { }
