@@ -4,6 +4,7 @@
     "website_url": "https://github.com/danielah05/WebfishingMods",
     "description": "In game notification mod for whenever certain events happen (Example: Meteor spawns, Raincloud spawns)",
     "dependencies": [
-        "NotNet-GDWeave-2.0.14"
+        "NotNet-GDWeave-2.0.14",
+        "PuppyGirl-TackleBox-0.5.2"
     ]
 }
